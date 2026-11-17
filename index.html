@@ -1,323 +1,1100 @@
+
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Amazon Sales | Fashion & Home Essentials</title>
-      <link rel="stylesheet" href="Amazon.Css">
-      <script type="text/javascript" src="Amazon.js" defer></script>
-   </head>
-   <body>
-       <nav id="sidebar">
-         <ul>
-            <li>
-               <span id="logo">AMAZON SALES</span>
-               <button id="toggle-btn" type="button" aria-label="Toggle navigation">
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="m242-200 200-280-200-280h98l200 280-200 280h-98Zm238 0 200-280-200-280h98l200 280-200 280h-98Z"/></svg>
-               </button>
-            </li>
-            <li class="active"> <!--active class is used to highlight the current page in the navigation menu-->
-               <a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
-                  <span>Home</span>
-               </a>
-            </li>
-            <li>
-               <a href="dashboard.html">
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M520-600v-240h320v240H520ZM120-440v-400h320v400H120Zm400 320v-400h320v400H520Zm-400 0v-240h320v240H120Zm80-400h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z"/></svg>
-                  <span>Shop Products</span>
-               </a>
-            </li> 
-            <li>
-               <button type="button" onclick="toggleSubMenu(this)" class="dropdown-btn">
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M40-160v-160q0-34 23.5-57t56.5-23h131q20 0 38 10t29 27q29 39 71.5 61t90.5 22q49 0 91.5-22t70.5-61q13-17 30.5-27t36.5-10h131q34 0 57 23t23 57v160H640v-91q-35 25-75.5 38T480-200q-43 0-84-13.5T320-252v92H40Zm440-160q-38 0-72-17.5T351-386q-17-25-42.5-39.5T253-440q22-37 93-58.5T480-520q63 0 134 21.5t93 58.5q-29 0-55 14.5T609-386q-22 32-56 49t-73 17ZM160-440q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T280-560q0 50-34.5 85T160-440Zm640 0q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T920-560q0 50-34.5 85T800-440ZM480-560q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T600-680q0 50-34.5 85T480-560Z"/></svg>
-                  <span>Clothing</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-               </button>
-               <ul class="sub-menu">
-                  <li><a href="#"> Dresses </a></li>
-                  <li><a href="#"> Trousers </a></li>
-                  <li><a href="#"> Shirts </a></li>
-                  <li><a href="#"> Tops </a></li>
-               </ul>
-            </li>
-            <li>      
-               <button type="button" onclick="toggleSubMenu(this)" class="dropdown-btn">
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M320-414v-306h120v306l-60-56-60 56Zm200 60v-526h120v406L520-354ZM120-216v-344h120v224L120-216Zm0 98 258-258 142 122 224-224h-64v-80h200v200h-80v-64L524-146 382-268 232-118H120Z"/></svg>
-                  <span>Bags</span> 
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg> 
-               </button>
-               <ul class="sub-menu">
-                  <li><a href="#"> Handbags </a></li>
-                  <li><a href="#"> Shoulder and Crossbody </a></li>
-                  <li><a href="#"> Backpacks </a></li>
-                  <li><a href="#"> Wallets and Purses </a></li>
-                  <li><a href="#"> Clutches and Mini Bags </a></li>
-               </ul>
-            </li>
-            <li>      
-               <button type="button" onclick="toggleSubMenu(this)" class="dropdown-btn">
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M320-414v-306h120v306l-60-56-60 56Zm200 60v-526h120v406L520-354ZM120-216v-344h120v224L120-216Zm0 98 258-258 142 122 224-224h-64v-80h200v200h-80v-64L524-146 382-268 232-118H120Z"/></svg>
-                  <span>Household Utensils</span> 
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg> 
-               </button>
-               <ul class="sub-menu">
-                  <li><a href="#"> CookWare </a></li>
-                  <li><a href="#"> TableWare </a></li>
-                  <li><a href="#"> Storage </a></li>
-                  <li><a href="#"> KitchenWare </a></li>
-               </ul>
-            </li>
-            <li>
-               <a href="AmazonAbout.html">
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M440-280h80v-240h-80v240Zm68.5-331.5Q520-623 520-640t-11.5-28.5Q497-680 480-680t-28.5 11.5Q440-657 440-640t11.5 28.5Q463-600 480-600t28.5-11.5ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
-                  <span>About</span>
-               </a>
-            </li>
-            <li>
-               <a href="profile.html">
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z"/></svg>
-                  <span>Contact</span>
-               </a>
-            </li>
-         </ul>
-      </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Amazon Sales – Shop fashion, elegant dresses, stylish bags, and quality home essentials in Kenya. Fast delivery, secure payments.">
+    <title>Amazon Sales | Fashion &amp; Home Essentials</title>
+    <link rel="stylesheet" href="Amazon.Css">
+    <script type="text/javascript" src="Amazon.js" defer></script>
+    <style>
+        /* ── HOME MAIN RESET ─────────────────────────────── */
+        main.home-main {
+            padding: 0;
+            background: #ffffff;
+            color: #202020;
+            overflow-x: hidden;
+        }
+        main.home-main p {
+            color: inherit;
+            opacity: 1;
+            font-weight: 400;
+            letter-spacing: normal;
+        }
+        main.home-main h2 {
+            font-size: inherit;
+            margin-bottom: 0;
+            color: inherit;
+            font-weight: inherit;
+            letter-spacing: normal;
+        }
 
-      <main>
-         <!-- HERO BANNER -->
-         <div class="container">
-            <section class="hero">
-               <div class="hero-text">
-                  <div class="welcome">
-                     WELCOME TO <span>AMAZON</span> SALES
-                  </div>
-                  <h1>
-                     Fashion, Bags &amp;<br>
-                     Home Essentials<br>
-                     <span>All in One Place!</span>
-                  </h1>
-                  <p>Quality, Style, and Affordability in One Place!</p>
-                  <a href="#products" class="shop-btn">🛒 Shop Now →</a>
-               </div>
+        /* ── TOP HEADER ──────────────────────────────────── */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #17271d;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.35);
+        }
 
-               <div class="hero-photo">
-                  <img
-                     src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=85"
+        /* Search bar */
+        .search-form {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+            border-radius: 30px;
+            overflow: hidden;
+            max-width: 560px;
+            border: 2px solid transparent;
+            transition: border-color 0.25s;
+        }
+        .search-form:focus-within {
+            border-color: #d6ae16;
+        }
+        .search-form input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 9px 16px;
+            font-size: 13px;
+            font-family: inherit;
+            color: #202020;
+            background: transparent;
+        }
+        .search-form button {
+            background: #d6ae16;
+            border: none;
+            padding: 0 18px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+        .search-form button:hover { background: #b9950d; }
+        .search-form button svg { fill: #fff; }
+
+        /* Header icon buttons */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-left: auto;
+        }
+        .hdr-btn {
+            position: relative;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            color: #ffffff;
+        }
+        .hdr-btn:hover { background: rgba(255,255,255,0.12); }
+        .hdr-btn svg { fill: #ffffff; display: block; }
+
+        /* Badge */
+        .badge {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            background: #d6ae16;
+            color: #17271d;
+            font-size: 9px;
+            font-weight: 800;
+            min-width: 16px;
+            height: 16px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 3px;
+            line-height: 1;
+        }
+
+        /* ── NOTIFICATION DROPDOWN ───────────────────────── */
+        .notif-dropdown {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            width: 300px;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+            overflow: hidden;
+            display: none;
+            z-index: 200;
+            border: 1px solid #f0ede6;
+        }
+        .notif-dropdown.open { display: block; animation: fadeDown 0.2s ease; }
+        .notif-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 16px 10px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .notif-header h4 { font-size: 14px; color: #202020; }
+        .notif-header span { font-size: 11px; color: #d6ae16; cursor: pointer; }
+        .notif-item {
+            display: flex;
+            gap: 12px;
+            padding: 12px 16px;
+            border-bottom: 1px solid #f8f8f8;
+            align-items: flex-start;
+        }
+        .notif-item:last-child { border-bottom: none; }
+        .notif-icon { font-size: 22px; flex-shrink: 0; }
+        .notif-item p { font-size: 12px; color: #444; line-height: 1.5; margin: 0; }
+        .notif-item small { font-size: 10px; color: #999; }
+        .notif-dot {
+            width: 8px; height: 8px;
+            background: #d6ae16;
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+
+        /* ── CART PANEL ──────────────────────────────────── */
+        .cart-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.4);
+            z-index: 300;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        .cart-overlay.open { opacity: 1; pointer-events: all; }
+        .cart-panel {
+            position: fixed;
+            top: 0;
+            right: -420px;
+            width: 400px;
+            max-width: 100vw;
+            height: 100vh;
+            background: #fff;
+            z-index: 400;
+            display: flex;
+            flex-direction: column;
+            box-shadow: -8px 0 40px rgba(0,0,0,0.18);
+            transition: right 0.35s cubic-bezier(0.4,0,0.2,1);
+        }
+        .cart-panel.open { right: 0; }
+        .cart-panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 22px;
+            border-bottom: 1px solid #f0f0f0;
+            background: #17271d;
+            color: #fff;
+        }
+        .cart-panel-header h3 { font-size: 16px; font-weight: 700; }
+        .cart-close-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            color: #fff;
+            border-radius: 6px;
+            display: flex;
+            transition: background 0.2s;
+        }
+        .cart-close-btn:hover { background: rgba(255,255,255,0.15); }
+        .cart-close-btn svg { fill: #fff; }
+        .cart-items-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+        }
+        .cart-empty {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #999;
+            gap: 12px;
+            font-size: 14px;
+        }
+        .cart-empty svg { fill: #ddd; }
+        .cart-entry {
+            display: flex;
+            gap: 14px;
+            padding: 14px 0;
+            border-bottom: 1px solid #f5f5f5;
+            align-items: center;
+        }
+        .cart-entry img {
+            width: 64px;
+            height: 64px;
+            object-fit: cover;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+        .cart-entry-info { flex: 1; min-width: 0; }
+        .cart-entry-info h4 { font-size: 13px; margin-bottom: 4px; color: #202020; }
+        .cart-entry-info p { font-size: 12px; font-weight: 700; color: #d6ae16; margin: 0; }
+        .cart-qty {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .qty-btn {
+            width: 26px; height: 26px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            background: #f8f8f8;
+            cursor: pointer;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #202020;
+            transition: background 0.2s;
+        }
+        .qty-btn:hover { background: #d6ae16; color: #fff; border-color: #d6ae16; }
+        .qty-val { font-size: 13px; font-weight: 700; min-width: 18px; text-align: center; }
+        .remove-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            color: #ccc;
+            transition: color 0.2s;
+            flex-shrink: 0;
+        }
+        .remove-btn:hover { color: #e33; }
+        .remove-btn svg { fill: currentColor; display: block; }
+        .cart-footer {
+            padding: 18px 22px;
+            border-top: 1px solid #f0f0f0;
+        }
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: #202020;
+        }
+        .cart-total span:last-child { color: #d6ae16; }
+        .checkout-btn {
+            width: 100%;
+            padding: 14px;
+            background: #d6ae16;
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .checkout-btn:hover { background: #b9950d; transform: translateY(-2px); }
+
+        /* ── AUTH MODAL ──────────────────────────────────── */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s;
+        }
+        .modal-overlay.open { opacity: 1; pointer-events: all; }
+        .auth-modal {
+            background: #fff;
+            border-radius: 20px;
+            width: 380px;
+            max-width: calc(100vw - 40px);
+            padding: 36px 32px 28px;
+            box-shadow: 0 24px 60px rgba(0,0,0,0.22);
+            transform: translateY(20px);
+            transition: transform 0.25s;
+            position: relative;
+        }
+        .modal-overlay.open .auth-modal { transform: translateY(0); }
+        .modal-close {
+            position: absolute;
+            top: 16px; right: 16px;
+            background: none; border: none;
+            cursor: pointer; padding: 4px;
+            color: #bbb; font-size: 20px;
+            line-height: 1; border-radius: 6px;
+            transition: color 0.2s;
+        }
+        .modal-close:hover { color: #555; }
+        .auth-logo {
+            text-align: center;
+            margin-bottom: 6px;
+            font-size: 18px;
+            font-weight: 800;
+            color: #17271d;
+            letter-spacing: 1px;
+        }
+        .auth-logo span { color: #d6ae16; }
+        .auth-tabs {
+            display: flex;
+            border-bottom: 2px solid #f0f0f0;
+            margin-bottom: 24px;
+            margin-top: 18px;
+        }
+        .auth-tab {
+            flex: 1;
+            background: none;
+            border: none;
+            padding: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #aaa;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -2px;
+            transition: 0.2s;
+        }
+        .auth-tab.active { color: #d6ae16; border-bottom-color: #d6ae16; }
+        .auth-form { display: none; }
+        .auth-form.active { display: block; }
+        .form-group { margin-bottom: 16px; }
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 6px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1.5px solid #e8e8e8;
+            border-radius: 10px;
+            font-size: 13px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s;
+            color: #202020;
+        }
+        .form-group input:focus { border-color: #d6ae16; }
+        .auth-submit {
+            width: 100%;
+            padding: 13px;
+            background: #d6ae16;
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+            margin-top: 6px;
+        }
+        .auth-submit:hover { background: #b9950d; transform: translateY(-2px); }
+        .auth-switch {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 12px;
+            color: #888;
+        }
+        .auth-switch a { color: #d6ae16; cursor: pointer; text-decoration: underline; }
+        .profile-menu-wrap { position: relative; }
+
+        /* Animations */
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── RESPONSIVE ──────────────────────────────────── */
+        @media (max-width: 600px) {
+            .site-header { padding: 0 12px; gap: 10px; }
+            .search-form { max-width: 100%; }
+            .cart-panel { width: 100vw; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- SIDEBAR NAV -->
+    <nav id="sidebar">
+        <ul>
+            <li>
+                <span id="logo">AMAZON SALES</span>
+                <button id="toggle-btn" type="button" aria-label="Toggle navigation">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                        <path d="m242-200 200-280-200-280h98l200 280-200 280h-98Zm238 0 200-280-200-280h98l200 280-200 280h-98Z"/>
+                    </svg>
+                </button>
+            </li>
+
+            <li class="active">
+                <a href="index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                        <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/>
+                    </svg>
+                    <span>Home</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="dashboard.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                        <path d="M520-600v-240h320v240H520ZM120-440v-400h320v400H120Zm400 320v-400h320v400H520Zm-400 0v-240h320v240H120Zm80-400h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z"/>
+                    </svg>
+                    <span>Shop Products</span>
+                </a>
+            </li>
+
+            <li>
+                <button type="button" onclick="toggleSubMenu(this)" class="dropdown-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                        <path d="M40-160v-160q0-34 23.5-57t56.5-23h131q20 0 38 10t29 27q29 39 71.5 61t90.5 22q49 0 91.5-22t70.5-61q13-17 30.5-27t36.5-10h131q34 0 57 23t23 57v160H640v-91q-35 25-75.5 38T480-200q-43 0-84-13.5T320-252v92H40Zm440-160q-38 0-72-17.5T351-386q-17-25-42.5-39.5T253-440q22-37 93-58.5T480-520q63 0 134 21.5t93 58.5q-29 0-55 14.5T609-386q-22 32-56 49t-73 17ZM160-440q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T280-560q0 50-34.5 85T160-440Zm640 0q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T920-560q0 50-34.5 85T800-440ZM480-560q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T600-680q0 50-34.5 85T480-560Z"/>
+                    </svg>
+                    <span>Clothing</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                    </svg>
+                </button>
+                <ul class="sub-menu">
+                    <li><a href="#">Dresses</a></li>
+                    <li><a href="#">Trousers</a></li>
+                    <li><a href="#">Shirts</a></li>
+                    <li><a href="#">Tops</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <button type="button" onclick="toggleSubMenu(this)" class="dropdown-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                        <path d="M320-414v-306h120v306l-60-56-60 56Zm200 60v-526h120v406L520-354ZM120-216v-344h120v224L120-216Zm0 98 258-258 142 122 224-224h-64v-80h200v200h-80v-64L524-146 382-268 232-118H120Z"/>
+                    </svg>
+                    <span>Bags</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                    </svg>
+                </button>
+                <ul class="sub-menu">
+                    <li><a href="#">Handbags</a></li>
+                    <li><a href="#">Shoulder and Crossbody</a></li>
+                    <li><a href="#">Backpacks</a></li>
+                    <li><a href="#">Wallets and Purses</a></li>
+                    <li><a href="#">Clutches and Mini Bags</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <button type="button" onclick="toggleSubMenu(this)" class="dropdown-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                        <path d="M320-414v-306h120v306l-60-56-60 56Zm200 60v-526h120v406L520-354ZM120-216v-344h120v224L120-216Zm0 98 258-258 142 122 224-224h-64v-80h200v200h-80v-64L524-146 382-268 232-118H120Z"/>
+                    </svg>
+                    <span>Household Utensils</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                    </svg>
+                </button>
+                <ul class="sub-menu">
+                    <li><a href="#">CookWare</a></li>
+                    <li><a href="#">TableWare</a></li>
+                    <li><a href="#">Storage</a></li>
+                    <li><a href="#">KitchenWare</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="AmazonAbout.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                        <path d="M440-280h80v-240h-80v240Zm68.5-331.5Q520-623 520-640t-11.5-28.5Q497-680 480-680t-28.5 11.5Q440-657 440-640t11.5 28.5Q463-600 480-600t28.5-11.5ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/>
+                    </svg>
+                    <span>About</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="profile.html">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                        <path d="M798-120q-125-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67Z"/>
+                    </svg>
+                    <span>Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- HOME PAGE MAIN CONTENT -->
+    <main class="home-main">
+
+        <!-- ══ TOP HEADER ══════════════════════════════════════ -->
+        <header class="site-header">
+
+            <!-- Search -->
+            <form class="search-form" role="search" onsubmit="return false;">
+                <input id="search-input" type="search" placeholder="Search products, categories…" aria-label="Search products">
+                <button type="submit" aria-label="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px">
+                        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                    </svg>
+                </button>
+            </form>
+
+            <div class="header-actions">
+
+                <!-- Notifications -->
+                <div class="profile-menu-wrap">
+                    <button id="notif-btn" class="hdr-btn" aria-label="Notifications" title="Notifications">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+                            <path d="M160-200v-80h80v-280q0-83 50-147.5T420-792v-28q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v28q80 20 130 84.5T720-560v280h80v80H160Zm320-300Zm0 420q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80Z"/>
+                        </svg>
+                        <span class="badge" id="notif-badge">3</span>
+                    </button>
+
+                    <!-- Notification Dropdown -->
+                    <div class="notif-dropdown" id="notif-dropdown">
+                        <div class="notif-header">
+                            <h4>Notifications</h4>
+                            <span onclick="clearNotifs()">Mark all read</span>
+                        </div>
+                        <div class="notif-item">
+                            <span class="notif-icon">🎉</span>
+                            <div style="flex:1;">
+                                <p>Welcome to Amazon Sales! Enjoy 10% off your first order.</p>
+                                <small>Just now</small>
+                            </div>
+                            <div class="notif-dot"></div>
+                        </div>
+                        <div class="notif-item">
+                            <span class="notif-icon">🚚</span>
+                            <div style="flex:1;">
+                                <p>Your order has been dispatched and is on the way!</p>
+                                <small>2 hrs ago</small>
+                            </div>
+                            <div class="notif-dot"></div>
+                        </div>
+                        <div class="notif-item">
+                            <span class="notif-icon">🏷️</span>
+                            <div style="flex:1;">
+                                <p>Flash Sale! Up to 30% off on selected fashion items today.</p>
+                                <small>Yesterday</small>
+                            </div>
+                            <div class="notif-dot"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cart -->
+                <button id="cart-btn" class="hdr-btn" aria-label="Shopping cart" title="Cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+                        <path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/>
+                    </svg>
+                    <span class="badge" id="cart-badge" style="display:none;">0</span>
+                </button>
+
+                <!-- Profile -->
+                <button id="profile-btn" class="hdr-btn" aria-label="Account" title="My Account">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+                        <path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z"/>
+                    </svg>
+                </button>
+
+            </div>
+        </header>
+
+        <!-- ══ CART PANEL ════════════════════════════════════════ -->
+        <div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+        <aside class="cart-panel" id="cart-panel" aria-label="Shopping cart">
+            <div class="cart-panel-header">
+                <h3>🛒 My Cart</h3>
+                <button class="cart-close-btn" onclick="closeCart()" aria-label="Close cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 -960 960 960" width="22px">
+                        <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="cart-items-list" id="cart-items-list">
+                <div class="cart-empty" id="cart-empty">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="64px" viewBox="0 -960 960 960" width="64px">
+                        <path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Z"/>
+                    </svg>
+                    <p>Your cart is empty</p>
+                </div>
+            </div>
+            <div class="cart-footer" id="cart-footer" style="display:none;">
+                <div class="cart-total">
+                    <span>Total</span>
+                    <span id="cart-total-price">KSh 0</span>
+                </div>
+                <button class="checkout-btn">Proceed to Checkout →</button>
+            </div>
+        </aside>
+
+        <!-- ══ AUTH MODAL ════════════════════════════════════════ -->
+        <div class="modal-overlay" id="auth-modal" role="dialog" aria-modal="true" aria-label="Sign in or create account">
+            <div class="auth-modal">
+                <button class="modal-close" onclick="closeAuth()" aria-label="Close">&times;</button>
+
+                <div class="auth-logo">AMAZON <span>SALES</span></div>
+
+                <div class="auth-tabs">
+                    <button class="auth-tab active" id="tab-signin" onclick="switchTab('signin')">Sign In</button>
+                    <button class="auth-tab" id="tab-register" onclick="switchTab('register')">Create Account</button>
+                </div>
+
+                <!-- Sign In Form -->
+                <div class="auth-form active" id="form-signin">
+                    <div class="form-group">
+                        <label for="signin-email">Email Address</label>
+                        <input type="email" id="signin-email" placeholder="you@example.com" autocomplete="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="signin-password">Password</label>
+                        <input type="password" id="signin-password" placeholder="Enter your password" autocomplete="current-password">
+                    </div>
+                    <button class="auth-submit" onclick="handleSignIn()">Sign In</button>
+                    <p class="auth-switch">Don't have an account? <a onclick="switchTab('register')">Create one</a></p>
+                </div>
+
+                <!-- Create Account Form -->
+                <div class="auth-form" id="form-register">
+                    <div class="form-group">
+                        <label for="reg-name">Full Name</label>
+                        <input type="text" id="reg-name" placeholder="Your full name" autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-email">Email Address</label>
+                        <input type="email" id="reg-email" placeholder="you@example.com" autocomplete="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-phone">Phone Number</label>
+                        <input type="tel" id="reg-phone" placeholder="+254 7XX XXX XXX" autocomplete="tel">
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-password">Password</label>
+                        <input type="password" id="reg-password" placeholder="Create a password" autocomplete="new-password">
+                    </div>
+                    <button class="auth-submit" onclick="handleRegister()">Create Account</button>
+                    <p class="auth-switch">Already have an account? <a onclick="switchTab('signin')">Sign in</a></p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- HERO BANNER -->
+        <section class="hero">
+
+            <div class="hero-text">
+                <p class="welcome">WELCOME TO <span>AMAZON</span> SALES</p>
+
+                <h1>
+                    Fashion, Bags &amp;<br>
+                    Home Essentials<br>
+                    <span>All in One Place!</span>
+                </h1>
+
+                <p>Quality, Style, and Affordability in One Place!</p>
+
+                <a href="#products" class="shop-btn">🛒 Shop Now →</a>
+            </div>
+
+            <div class="hero-photo">
+                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=85"
                      alt="Fashion shopping collection">
-               </div>
+            </div>
 
-               <div class="hero-tagline">
-                  <h2>Shop Smart.<br>Live Better.</h2>
-                  <div class="gold-line"></div>
-               </div>
+            <div class="hero-tagline">
+                <h2>Shop Smart.<br>Live Better.</h2>
+                <div class="gold-line"></div>
+            </div>
+
+        </section>
+
+        <!-- SHOPPING CATEGORIES -->
+        <nav class="categories" aria-label="Shop by category">
+
+            <a href="#clothing" class="category-card">
+                <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=200&q=80" alt="Clothing">
+                <div>
+                    <h3>Clothing</h3>
+                    <p>View All →</p>
+                </div>
+            </a>
+
+            <a href="#dresses" class="category-card">
+                <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=200&q=80" alt="Elegant dresses">
+                <div>
+                    <h3>Elegant Dresses</h3>
+                    <p>View All →</p>
+                </div>
+            </a>
+
+            <a href="#bags" class="category-card">
+                <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=200&q=80" alt="Fashion bags">
+                <div>
+                    <h3>Bags</h3>
+                    <p>View All →</p>
+                </div>
+            </a>
+
+            <a href="#utensils" class="category-card">
+                <img src="https://images.unsplash.com/photo-1584990347449-a5d9f800a783?auto=format&fit=crop&w=200&q=80" alt="Household utensils">
+                <div>
+                    <h3>Household Utensils</h3>
+                    <p>View All →</p>
+                </div>
+            </a>
+
+        </nav>
+
+        <!-- MAIN SHOPPING AREA -->
+        <div class="main-content">
+
+            <!-- LEFT PROMO — Elegant Dresses -->
+            <aside id="dresses" class="promo promo-dresses">
+                <div class="promo-content">
+                    <h2>Elegant<br>Dresses</h2>
+                    <p>Look Good.<br>Feel Great.</p>
+                    <a href="#dresses" class="shop-btn">Shop Now →</a>
+                </div>
+            </aside>
+
+            <!-- FEATURED PRODUCTS -->
+            <section id="products" class="featured">
+
+                <div class="section-heading">
+                    <h2>Featured Products</h2>
+                    <a href="#products">View All Products →</a>
+                </div>
+
+                <div class="product-grid">
+
+                    <!-- Product 1 -->
+                    <article class="product-card">
+                        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=450&q=85"
+                             alt="Elegant Ladies Dress">
+                        <div class="product-info">
+                            <h3>Elegant Ladies Dress</h3>
+                            <p class="price">KSh 2,800</p>
+                            <p class="rating">★★★★★ <span>(24)</span></p>
+                            <button type="button" class="add-cart">🛒 Add to Cart</button>
+                        </div>
+                    </article>
+
+                    <!-- Product 2 -->
+                    <article class="product-card">
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=450&q=85"
+                             alt="Stylish Ladies Bag">
+                        <div class="product-info">
+                            <h3>Stylish Ladies Bag</h3>
+                            <p class="price">KSh 3,000</p>
+                            <p class="rating">★★★★★ <span>(36)</span></p>
+                            <button type="button" class="add-cart">🛒 Add to Cart</button>
+                        </div>
+                    </article>
+
+                    <!-- Product 3 -->
+                    <article class="product-card">
+                        <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=450&q=85"
+                             alt="Men's Casual Shirt">
+                        <div class="product-info">
+                            <h3>Men's Casual Shirt</h3>
+                            <p class="price">KSh 1,200</p>
+                            <p class="rating">★★★★★ <span>(14)</span></p>
+                            <button type="button" class="add-cart">🛒 Add to Cart</button>
+                        </div>
+                    </article>
+
+                    <!-- Product 4 -->
+                    <article class="product-card">
+                        <img src="https://images.unsplash.com/photo-1584990347449-a5d9f800a783?auto=format&fit=crop&w=450&q=85"
+                             alt="Quality Cooking Pots">
+                        <div class="product-info">
+                            <h3>Quality Cooking Pots</h3>
+                            <p class="price">KSh 3,500</p>
+                            <p class="rating">★★★★★ <span>(20)</span></p>
+                            <button type="button" class="add-cart">🛒 Add to Cart</button>
+                        </div>
+                    </article>
+
+                </div>
             </section>
-         </div>
 
-         <!-- FOUR SHOPPING CATEGORIES -->
-         <div class="container">
-            <section class="categories">
-               <a href="#clothing" class="category-card">
-                  <img
-                     src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=200&q=80"
-                     alt="Clothing">
-                  <div>
-                     <h3>Clothing</h3>
-                     <p>View All →</p>
-                  </div>
-               </a>
+            <!-- RIGHT PROMO — Home Essentials -->
+            <aside id="utensils" class="promo promo-home">
+                <div class="promo-content">
+                    <h2>Quality<br>Home Essentials</h2>
+                    <p>For a Better Home</p>
+                    <a href="#products" class="shop-btn">Shop Now →</a>
+                </div>
+            </aside>
 
-               <a href="#dresses" class="category-card">
-                  <img
-                     src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=200&q=80"
-                     alt="Elegant dresses">
-                  <div>
-                     <h3>Elegant Dresses</h3>
-                     <p>View All →</p>
-                  </div>
-               </a>
+        </div>
 
-               <a href="#bags" class="category-card">
-                  <img
-                     src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=200&q=80"
-                     alt="Fashion bags">
-                  <div>
-                     <h3>Bags</h3>
-                     <p>View All →</p>
-                  </div>
-               </a>
+        <!-- SERVICE BAR -->
+        <section class="services" aria-label="Our services">
 
-               <a href="#utensils" class="category-card">
-                  <img
-                     src="https://images.unsplash.com/photo-1584990347449-a5d9f800a783?auto=format&fit=crop&w=200&q=80"
-                     alt="Household utensils">
-                  <div>
-                     <h3>Household Utensils</h3>
-                     <p>View All →</p>
-                  </div>
-               </a>
-            </section>
-         </div>
-
-         <!-- MAIN PRODUCTS AREA --> 
-         <div class="container">
-            <div class="main-content">
-               <!-- LEFT PROMOTION -->
-               <aside class="promo promo-dresses" id="dresses">
-                  <div class="promo-content">
-                     <h2>Elegant<br>Dresses</h2>
-                     <p>Look Good.<br>Feel Great.</p>
-                     <a href="#products" class="shop-btn">Shop Now →</a>
-                  </div>
-               </aside>
-
-               <!-- FEATURED PRODUCTS -->
-               <section class="featured" id="products">
-                  <div class="section-heading">
-                     <h2>Featured Products</h2>
-                     <a href="#products">View All Products →</a>
-                  </div>
-
-                  <div class="product-grid">
-                     <article class="product-card">
-                        <img
-                           src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=450&q=85"
-                           alt="Elegant pink dress">
-                        <div class="product-info">
-                           <h3>Elegant Ladies Dress</h3>
-                           <p class="price">KSh 2,800</p>
-                           <p class="rating">★★★★★ <span>(24)</span></p>
-                           <button class="add-cart" type="button">🛒 Add to Cart</button>
-                        </div>
-                     </article>
-
-                     <article class="product-card">
-                        <img
-                           src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=450&q=85"
-                           alt="Black ladies handbag">
-                        <div class="product-info">
-                           <h3>Stylish Ladies Bag</h3>
-                           <p class="price">KSh 3,000</p>
-                           <p class="rating">★★★★★ <span>(36)</span></p>
-                           <button class="add-cart" type="button">🛒 Add to Cart</button>
-                        </div>
-                     </article>
-
-                     <article class="product-card">
-                        <img
-                           src="https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=450&q=85"
-                           alt="Men's casual shirt">
-                        <div class="product-info">
-                           <h3>Men's Casual Shirt</h3>
-                           <p class="price">KSh 1,200</p>
-                           <p class="rating">★★★★★ <span>(14)</span></p>
-                           <button class="add-cart" type="button">🛒 Add to Cart</button>
-                        </div>
-                     </article>
-
-                     <article class="product-card">
-                        <img
-                           src="https://images.unsplash.com/photo-1584990347449-a5d9f800a783?auto=format&fit=crop&w=450&q=85"
-                           alt="Cooking pots">
-                        <div class="product-info">
-                           <h3>Quality Cooking Pots</h3>
-                           <p class="price">KSh 3,500</p>
-                           <p class="rating">★★★★★ <span>(20)</span></p>
-                           <button class="add-cart" type="button">🛒 Add to Cart</button>
-                        </div>
-                     </article>
-                  </div>
-               </section>
-
-               <!-- RIGHT PROMOTION -->
-               <aside class="promo promo-home" id="utensils">
-                  <div class="promo-content">
-                     <h2>Quality<br>Home Essentials</h2>
-                     <p>For a Better Home</p>
-                     <a href="#products" class="shop-btn">Shop Now →</a>
-                  </div>
-               </aside>
-            </div>
-         </div>
-
-         <!-- SERVICE HIGHLIGHTS -->
-         <section class="services">
             <div class="service-item">
-               <span class="service-icon">🚚</span>
-               <div>
-                  <h3>Fast &amp; Reliable Delivery</h3>
-                  <p>Across Kenya</p>
-               </div>
+                <span class="service-icon">🚚</span>
+                <div>
+                    <h3>Fast &amp; Reliable Delivery</h3>
+                    <p>Across Kenya</p>
+                </div>
             </div>
 
             <div class="service-item">
-               <span class="service-icon">🛡</span>
-               <div>
-                  <h3>Secure Payments</h3>
-                  <p>Safe Shopping</p>
-               </div>
+                <span class="service-icon">🛡️</span>
+                <div>
+                    <h3>Secure Payments</h3>
+                    <p>Safe Shopping</p>
+                </div>
             </div>
 
             <div class="service-item">
-               <span class="service-icon">🎧</span>
-               <div>
-                  <h3>24/7 Customer Support</h3>
-                  <p>We're Here to Help</p>
-               </div>
+                <span class="service-icon">🎧</span>
+                <div>
+                    <h3>Customer Support</h3>
+                    <p>We're Here to Help</p>
+                </div>
             </div>
 
             <div class="service-item">
-               <span class="service-icon">◇</span>
-               <div>
-                  <h3>Affordable Prices</h3>
-                  <p>Best Deals for You</p>
-               </div>
+                <span class="service-icon">💎</span>
+                <div>
+                    <h3>Affordable Prices</h3>
+                    <p>Best Deals for You</p>
+                </div>
             </div>
-         </section>
 
-         <!-- ABOUT -->
-         <section class="about" id="about">
-            <h2>About Amazon Sales</h2>
-            <p>
-               Discover fashionable clothing, elegant dresses, stylish bags,
-               and quality household essentials. We bring quality, style,
-               and affordability together in one convenient place.
-            </p>
-         </section>
+        </section>
 
-         <!-- FOOTER -->
-         <footer id="contact">
+        <!-- FOOTER -->
+        <footer id="contact">
+
             <div class="footer-content">
-               <div>
-                  <h2 class="brand">AMAZON <span>SALES</span></h2>
-                  <p>Quality, Style, and Affordability in One Place!</p>
-               </div>
 
-               <div>
-                  <h3>Quick Links</h3>
-                  <a href="index.html">Home</a>
-                  <a href="#products">Shop Products</a>
-                  <a href="#about">About Us</a>
-                  <a href="#contact">Contact Us</a>
-               </div>
+                <div>
+                    <h2 class="brand">AMAZON <span>SALES</span></h2>
+                    <p>Quality, Style, and Affordability in One Place!</p>
+                </div>
 
-               <div>
-                  <h3>Contact Us</h3>
-                  <p>Phone: +254719715869</p>
-                  <p>Email: michaelongili2003@gmail.com</p>
-                  <p>Location: Kenya</p>
-               </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="#products">Shop Products</a>
+                    <a href="AmazonAbout.html">About Us</a>
+                    <a href="#contact">Contact Us</a>
+                </div>
 
-               <div>
-                  <h3>Follow Us</h3>
-                  <a href="#">Facebook</a>
-                  <a href="#">Instagram</a>
-                  <a href="#">WhatsApp</a>
-               </div>
+                <div>
+                    <h3>Contact Us</h3>
+                    <p>📞 +254 119 257 090</p>
+                    <p>✉️ Amazondesinerssales@gmail.com</p>
+                    <p>📍 Kenya</p>
+                </div>
+
+                <div>
+                    <h3>Follow Us</h3>
+                    <a href="#">Facebook</a>
+                    <a href="https://www.instagram.com/stories/ongil_amazonsales25/4006165626619760657?utm_source=ig_story_item_share&mdxt=b3h5bnp3cjc3eTUy">Instagram</a>
+                    <a href="https://whatsapp.com/channel/0029VbCVFF08vd1Tvcu5cs3D">WhatsApp</a>
+                </div>
+
             </div>
 
-            <div class="copyright">
-               &copy; 2026 Amazon Sales. All rights reserved.
+            <p class="copyright">&copy; 2026 Amazon Sales. All rights reserved.</p>
+
+        </footer>
+
+    </main>
+<script>
+/* ── CART STATE ────────────────────────────── */
+let cart = [];
+
+function addToCart(name, price, img) {
+    const existing = cart.find(i => i.name === name);
+    if (existing) {
+        existing.qty++;
+    } else {
+        cart.push({ name, price, img, qty: 1 });
+    }
+    renderCart();
+    openCart();
+}
+
+function renderCart() {
+    const list = document.getElementById('cart-items-list');
+    const empty = document.getElementById('cart-empty');
+    const footer = document.getElementById('cart-footer');
+    const badge = document.getElementById('cart-badge');
+
+    if (cart.length === 0) {
+        empty.style.display = 'flex';
+        footer.style.display = 'none';
+        badge.style.display = 'none';
+        list.innerHTML = '';
+        list.appendChild(empty);
+        return;
+    }
+
+    const totalQty = cart.reduce((s, i) => s + i.qty, 0);
+    const totalPrice = cart.reduce((s, i) => s + i.price * i.qty, 0);
+
+    badge.textContent = totalQty;
+    badge.style.display = 'flex';
+    document.getElementById('cart-total-price').textContent =
+        'KSh ' + totalPrice.toLocaleString();
+    footer.style.display = 'block';
+
+    list.innerHTML = '';
+    cart.forEach((item, idx) => {
+        const entry = document.createElement('div');
+        entry.className = 'cart-entry';
+        entry.innerHTML = `
+            <img src="${item.img}" alt="${item.name}">
+            <div class="cart-entry-info">
+                <h4>${item.name}</h4>
+                <p>KSh ${item.price.toLocaleString()}</p>
+                <div class="cart-qty">
+                    <button class="qty-btn" onclick="changeQty(${idx}, -1)">−</button>
+                    <span class="qty-val">${item.qty}</span>
+                    <button class="qty-btn" onclick="changeQty(${idx}, 1)">+</button>
+                </div>
             </div>
-         </footer>
-      </main>
-   </body>
+            <button class="remove-btn" onclick="removeItem(${idx})" aria-label="Remove">
+                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px">
+                    <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </button>`;
+        list.appendChild(entry);
+    });
+}
+
+function changeQty(idx, delta) {
+    cart[idx].qty += delta;
+    if (cart[idx].qty < 1) cart.splice(idx, 1);
+    renderCart();
+}
+
+function removeItem(idx) {
+    cart.splice(idx, 1);
+    renderCart();
+}
+
+function openCart() {
+    document.getElementById('cart-panel').classList.add('open');
+    document.getElementById('cart-overlay').classList.add('open');
+}
+
+function closeCart() {
+    document.getElementById('cart-panel').classList.remove('open');
+    document.getElementById('cart-overlay').classList.remove('open');
+}
+
+/* ── NOTIFICATION ──────────────────────────── */
+function clearNotifs() {
+    document.querySelectorAll('.notif-dot').forEach(d => d.remove());
+    document.getElementById('notif-badge').style.display = 'none';
+}
+
+/* ── AUTH MODAL ────────────────────────────── */
+function openAuth(tab) {
+    document.getElementById('auth-modal').classList.add('open');
+    if (tab) switchTab(tab);
+}
+
+function closeAuth() {
+    document.getElementById('auth-modal').classList.remove('open');
+}
+
+function switchTab(tab) {
+    document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
+    document.getElementById('tab-' + tab).classList.add('active');
+    document.getElementById('form-' + tab).classList.add('active');
+}
+
+function handleSignIn() {
+    const email = document.getElementById('signin-email').value.trim();
+    const pass  = document.getElementById('signin-password').value;
+    if (!email || !pass) { alert('Please fill in all fields.'); return; }
+    // TODO: connect to backend / Firebase
+    alert('Welcome back! (Demo — connect to your backend)');
+    closeAuth();
+}
+
+function handleRegister() {
+    const name  = document.getElementById('reg-name').value.trim();
+    const email = document.getElementById('reg-email').value.trim();
+    const phone = document.getElementById('reg-phone').value.trim();
+    const pass  = document.getElementById('reg-password').value;
+    if (!name || !email || !phone || !pass) { alert('Please fill in all fields.'); return; }
+    // TODO: connect to backend / Firebase
+    alert('Account created! Welcome to Amazon Sales 🎉 (Demo)');
+    closeAuth();
+}
+
+/* ── WIRE UP BUTTONS ───────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Cart button
+    document.getElementById('cart-btn').addEventListener('click', openCart);
+
+    // Profile button opens auth modal
+    document.getElementById('profile-btn').addEventListener('click', () => openAuth('signin'));
+
+    // Notification toggle
+    const notifBtn = document.getElementById('notif-btn');
+    const notifDropdown = document.getElementById('notif-dropdown');
+    notifBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        notifDropdown.classList.toggle('open');
+    });
+
+    // Close notification on outside click
+    document.addEventListener('click', (e) => {
+        if (!notifBtn.contains(e.target) && !notifDropdown.contains(e.target)) {
+            notifDropdown.classList.remove('open');
+        }
+    });
+
+    // Close auth modal on overlay click
+    document.getElementById('auth-modal').addEventListener('click', function(e) {
+        if (e.target === this) closeAuth();
+    });
+
+    // Wire "Add to Cart" buttons to products
+    const products = [
+        { name: 'Elegant Ladies Dress', price: 2800, img: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=450&q=85' },
+        { name: 'Stylish Ladies Bag',   price: 3000, img: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=450&q=85' },
+        { name: "Men's Casual Shirt",   price: 1200, img: 'https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=450&q=85' },
+        { name: 'Quality Cooking Pots', price: 3500, img: 'https://images.unsplash.com/photo-1584990347449-a5d9f800a783?auto=format&fit=crop&w=450&q=85' },
+    ];
+    document.querySelectorAll('.add-cart').forEach((btn, i) => {
+        btn.addEventListener('click', () => {
+            const p = products[i];
+            addToCart(p.name, p.price, p.img);
+        });
+    });
+
+    renderCart();
+});
+</script>
+</body>
 </html>

@@ -1,0 +1,746 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Sales | Shop Products</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 25px;
+            font-family: Arial, sans-serif;
+            background: #f8f7f3;
+            color: #26352d;
+        }
+
+        .shop-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .shop-header h1 {
+            margin-bottom: 8px;
+        }
+
+        .shop-header p {
+            color: #6b746e;
+        }
+
+        .category-section {
+            margin-bottom: 45px;
+            scroll-margin-top: 20px;
+        }
+
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .section-heading h2 {
+            margin: 0;
+            font-size: 25px;
+        }
+
+        .section-heading a {
+            color: #526c55;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: #fff;
+            border: 1px solid #ecebe5;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.045);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.09);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            display: block;
+            background: #eeece5;
+        }
+
+        .product-info {
+            padding: 15px;
+        }
+
+        .product-info h3 {
+            font-size: 16px;
+            margin: 0 0 10px;
+            min-height: 38px;
+            line-height: 1.35;
+        }
+
+        .price {
+            color: #526c55;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 8px 0;
+        }
+
+        .rating {
+            color: #e5a323;
+            font-size: 14px;
+            margin: 8px 0 13px;
+        }
+
+        .rating span {
+            color: #777;
+        }
+
+        .add-cart {
+            width: 100%;
+            padding: 11px 8px;
+            border: none;
+            border-radius: 9px;
+            background: #26352d;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .add-cart:hover {
+            background: #526c55;
+        }
+
+        @media (max-width: 1000px) {
+            .product-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 15px;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+            }
+
+            .product-card img {
+                height: 155px;
+            }
+
+            .product-info {
+                padding: 11px;
+            }
+
+            .product-info h3 {
+                font-size: 14px;
+            }
+
+            .price {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="shop-header">
+        <h1>Amazon Sales</h1>
+        <p>Quality, Style, and Affordability in One Place!</p>
+        <h2>Our Product Catalogue</h2>
+        <p>Discover something special in every category.</p>
+    </header>
+
+    <!-- =====================================
+         CATEGORY 1: CLOTHING (15 PRODUCTS)
+    ====================================== -->
+
+    <section class="category-section" id="clothing">
+
+        <div class="section-heading">
+            <h2>Clothing</h2>
+            <a href="#clothing">View Clothing</a>
+        </div>
+
+        <div class="product-grid">
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=450&q=85" alt="Men's casual shirt">
+                <div class="product-info">
+                    <h3>Men's Casual Shirt</h3>
+                    <p class="price">KSh 1,200</p>
+                    <p class="rating">★★★★★ <span>(14)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=450&q=85" alt="Classic cotton T-shirt">
+                <div class="product-info">
+                    <h3>Classic Cotton T-Shirt</h3>
+                    <p class="price">KSh 650</p>
+                    <p class="rating">★★★★★ <span>(18)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=450&q=85" alt="Denim jeans">
+                <div class="product-info">
+                    <h3>Classic Denim Jeans</h3>
+                    <p class="price">KSh 1,800</p>
+                    <p class="rating">★★★★★ <span>(21)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=450&q=85" alt="Formal office shirt">
+                <div class="product-info">
+                    <h3>Formal Office Shirt</h3>
+                    <p class="price">KSh 1,450</p>
+                    <p class="rating">★★★★★ <span>(16)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=450&q=85" alt="Casual jacket">
+                <div class="product-info">
+                    <h3>Casual Jacket</h3>
+                    <p class="price">KSh 2,500</p>
+                    <p class="rating">★★★★★ <span>(12)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=450&q=85" alt="Women's casual top">
+                <div class="product-info">
+                    <h3>Women's Casual Top</h3>
+                    <p class="price">KSh 850</p>
+                    <p class="rating">★★★★★ <span>(19)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=450&q=85" alt="Tailored trousers">
+                <div class="product-info">
+                    <h3>Tailored Trousers</h3>
+                    <p class="price">KSh 1,600</p>
+                    <p class="rating">★★★★★ <span>(11)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=450&q=85" alt="Everyday casual wear">
+                <div class="product-info">
+                    <h3>Everyday Casual Wear</h3>
+                    <p class="price">KSh 1,100</p>
+                    <p class="rating">★★★★★ <span>(17)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=450&q=85" alt="Premium graphic T-shirt">
+                <div class="product-info">
+                    <h3>Premium Graphic T-Shirt</h3>
+                    <p class="price">KSh 900</p>
+                    <p class="rating">★★★★★ <span>(22)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1548883354-94bcfe321cbb?auto=format&fit=crop&w=450&q=85" alt="Warm knitted sweater">
+                <div class="product-info">
+                    <h3>Knitted Sweater</h3>
+                    <p class="price">KSh 1,750</p>
+                    <p class="rating">★★★★★ <span>(15)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=450&q=85" alt="Women's fashion outfit">
+                <div class="product-info">
+                    <h3>Women's Fashion Outfit</h3>
+                    <p class="price">KSh 2,100</p>
+                    <p class="rating">★★★★★ <span>(20)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=450&q=85" alt="Lightweight summer clothing">
+                <div class="product-info">
+                    <h3>Lightweight Summer Wear</h3>
+                    <p class="price">KSh 1,300</p>
+                    <p class="rating">★★★★★ <span>(13)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=450&q=85" alt="Fashion leather jacket">
+                <div class="product-info">
+                    <h3>Fashion Leather Jacket</h3>
+                    <p class="price">KSh 3,800</p>
+                    <p class="rating">★★★★★ <span>(10)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1506629905607-d9a9d0f5b5a1?auto=format&fit=crop&w=450&q=85" alt="Comfortable polo shirt">
+                <div class="product-info">
+                    <h3>Comfortable Polo Shirt</h3>
+                    <p class="price">KSh 950</p>
+                    <p class="rating">★★★★★ <span>(16)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=450&q=85" alt="Smart casual outerwear">
+                <div class="product-info">
+                    <h3>Smart Casual Outerwear</h3>
+                    <p class="price">KSh 2,700</p>
+                    <p class="rating">★★★★★ <span>(9)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- =====================================
+         CATEGORY 2: ELEGANT DRESSES (12)
+    ====================================== -->
+
+    <section class="category-section" id="dresses">
+
+        <div class="section-heading">
+            <h2>Elegant Dresses</h2>
+            <a href="#dresses">View Dresses</a>
+        </div>
+
+        <div class="product-grid">
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=450&q=85" alt="Elegant ladies dress">
+                <div class="product-info">
+                    <h3>Elegant Ladies Dress</h3>
+                    <p class="price">KSh 2,800</p>
+                    <p class="rating">★★★★★ <span>(24)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=450&q=85" alt="Evening party dress">
+                <div class="product-info">
+                    <h3>Evening Party Dress</h3>
+                    <p class="price">KSh 3,500</p>
+                    <p class="rating">★★★★★ <span>(18)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=450&q=85" alt="Floral summer dress">
+                <div class="product-info">
+                    <h3>Floral Summer Dress</h3>
+                    <p class="price">KSh 2,200</p>
+                    <p class="rating">★★★★★ <span>(15)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=450&q=85" alt="Classic black dress">
+                <div class="product-info">
+                    <h3>Classic Black Dress</h3>
+                    <p class="price">KSh 2,950</p>
+                    <p class="rating">★★★★★ <span>(27)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1596783074918-c84cb06531ca?auto=format&fit=crop&w=450&q=85" alt="Formal office dress">
+                <div class="product-info">
+                    <h3>Formal Office Dress</h3>
+                    <p class="price">KSh 2,600</p>
+                    <p class="rating">★★★★★ <span>(12)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?auto=format&fit=crop&w=450&q=85" alt="Wedding guest dress">
+                <div class="product-info">
+                    <h3>Wedding Guest Dress</h3>
+                    <p class="price">KSh 4,200</p>
+                    <p class="rating">★★★★★ <span>(20)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1566479179817-c0b5b4b4b1e1?auto=format&fit=crop&w=450&q=85" alt="Midi-length dress">
+                <div class="product-info">
+                    <h3>Midi-Length Dress</h3>
+                    <p class="price">KSh 2,400</p>
+                    <p class="rating">★★★★★ <span>(14)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?auto=format&fit=crop&w=450&q=85" alt="Maxi evening dress">
+                <div class="product-info">
+                    <h3>Maxi Evening Dress</h3>
+                    <p class="price">KSh 3,900</p>
+                    <p class="rating">★★★★★ <span>(17)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=450&q=85" alt="Modern casual dress">
+                <div class="product-info">
+                    <h3>Modern Casual Dress</h3>
+                    <p class="price">KSh 1,950</p>
+                    <p class="rating">★★★★★ <span>(11)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1592903297149-37fb25202dfa?auto=format&fit=crop&w=450&q=85" alt="Sleeveless summer dress">
+                <div class="product-info">
+                    <h3>Sleeveless Summer Dress</h3>
+                    <p class="price">KSh 1,850</p>
+                    <p class="rating">★★★★★ <span>(13)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=450&q=85" alt="Chic fashion dress">
+                <div class="product-info">
+                    <h3>Chic Fashion Dress</h3>
+                    <p class="price">KSh 2,750</p>
+                    <p class="rating">★★★★★ <span>(19)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=450&q=85" alt="Premium occasion dress">
+                <div class="product-info">
+                    <h3>Premium Occasion Dress</h3>
+                    <p class="price">KSh 4,500</p>
+                    <p class="rating">★★★★★ <span>(16)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- =====================================
+         CATEGORY 3: BAGS (12 PRODUCTS)
+    ====================================== -->
+
+    <section class="category-section" id="bags">
+
+        <div class="section-heading">
+            <h2>Bags</h2>
+            <a href="#bags">View Bags</a>
+        </div>
+
+        <div class="product-grid">
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=450&q=85" alt="Stylish ladies handbag">
+                <div class="product-info">
+                    <h3>Stylish Ladies Handbag</h3>
+                    <p class="price">KSh 3,000</p>
+                    <p class="rating">★★★★★ <span>(36)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=450&q=85" alt="Everyday backpack">
+                <div class="product-info">
+                    <h3>Everyday Backpack</h3>
+                    <p class="price">KSh 2,200</p>
+                    <p class="rating">★★★★★ <span>(23)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=450&q=85" alt="Elegant shoulder bag">
+                <div class="product-info">
+                    <h3>Elegant Shoulder Bag</h3>
+                    <p class="price">KSh 2,750</p>
+                    <p class="rating">★★★★★ <span>(18)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=450&q=85" alt="Designer-style handbag">
+                <div class="product-info">
+                    <h3>Designer-Style Handbag</h3>
+                    <p class="price">KSh 3,800</p>
+                    <p class="rating">★★★★★ <span>(26)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1622560480654-d96214fdc887?auto=format&fit=crop&w=450&q=85" alt="Travel backpack">
+                <div class="product-info">
+                    <h3>Travel Backpack</h3>
+                    <p class="price">KSh 3,200</p>
+                    <p class="rating">★★★★★ <span>(17)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?auto=format&fit=crop&w=450&q=85" alt="Compact crossbody bag">
+                <div class="product-info">
+                    <h3>Compact Crossbody Bag</h3>
+                    <p class="price">KSh 1,800</p>
+                    <p class="rating">★★★★★ <span>(21)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?auto=format&fit=crop&w=450&q=85" alt="Fashion tote bag">
+                <div class="product-info">
+                    <h3>Fashion Tote Bag</h3>
+                    <p class="price">KSh 1,500</p>
+                    <p class="rating">★★★★★ <span>(15)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=450&q=85" alt="School bag">
+                <div class="product-info">
+                    <h3>School Bag</h3>
+                    <p class="price">KSh 1,700</p>
+                    <p class="rating">★★★★★ <span>(19)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1581605405669-fcdf81165afa?auto=format&fit=crop&w=450&q=85" alt="Weekend travel bag">
+                <div class="product-info">
+                    <h3>Weekend Travel Bag</h3>
+                    <p class="price">KSh 2,900</p>
+                    <p class="rating">★★★★★ <span>(12)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=450&q=85" alt="Mini evening handbag">
+                <div class="product-info">
+                    <h3>Mini Evening Handbag</h3>
+                    <p class="price">KSh 1,600</p>
+                    <p class="rating">★★★★★ <span>(14)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=450&q=85" alt="Structured office bag">
+                <div class="product-info">
+                    <h3>Structured Office Bag</h3>
+                    <p class="price">KSh 2,650</p>
+                    <p class="rating">★★★★★ <span>(16)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=450&q=85" alt="Outdoor utility backpack">
+                <div class="product-info">
+                    <h3>Outdoor Utility Backpack</h3>
+                    <p class="price">KSh 2,450</p>
+                    <p class="rating">★★★★★ <span>(11)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- =====================================
+         CATEGORY 4: HOUSEHOLD UTENSILS (11)
+    ====================================== -->
+
+    <section class="category-section" id="utensils">
+
+        <div class="section-heading">
+            <h2>Household Utensils</h2>
+            <a href="#utensils">View Home Essentials</a>
+        </div>
+
+        <div class="product-grid">
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1584990347449-a5d9f800a783?auto=format&fit=crop&w=450&q=85" alt="Quality cooking pots">
+                <div class="product-info">
+                    <h3>Quality Cooking Pots</h3>
+                    <p class="price">KSh 3,500</p>
+                    <p class="rating">★★★★★ <span>(20)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=450&q=85" alt="Kitchen essentials">
+                <div class="product-info">
+                    <h3>Kitchen Essentials Set</h3>
+                    <p class="price">KSh 2,800</p>
+                    <p class="rating">★★★★★ <span>(16)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=450&q=85" alt="Modern kitchen accessories">
+                <div class="product-info">
+                    <h3>Kitchen Accessories Set</h3>
+                    <p class="price">KSh 1,250</p>
+                    <p class="rating">★★★★★ <span>(13)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1576021182211-9ea8dced3690?auto=format&fit=crop&w=450&q=85" alt="Dinner plate set">
+                <div class="product-info">
+                    <h3>Dinner Plate Set</h3>
+                    <p class="price">KSh 2,100</p>
+                    <p class="rating">★★★★★ <span>(18)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?auto=format&fit=crop&w=450&q=85" alt="Ceramic mug set">
+                <div class="product-info">
+                    <h3>Ceramic Mug Set</h3>
+                    <p class="price">KSh 850</p>
+                    <p class="rating">★★★★★ <span>(22)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&w=450&q=85" alt="Kitchen storage jars">
+                <div class="product-info">
+                    <h3>Kitchen Storage Jars</h3>
+                    <p class="price">KSh 1,400</p>
+                    <p class="rating">★★★★★ <span>(12)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=450&q=85" alt="Home serving tray">
+                <div class="product-info">
+                    <h3>Home Serving Tray</h3>
+                    <p class="price">KSh 950</p>
+                    <p class="rating">★★★★★ <span>(10)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=450&q=85" alt="Home organization basket">
+                <div class="product-info">
+                    <h3>Storage Basket</h3>
+                    <p class="price">KSh 1,100</p>
+                    <p class="rating">★★★★★ <span>(15)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1603199506016-b9a594b593c0?auto=format&fit=crop&w=450&q=85" alt="Kitchen cooking utensils">
+                <div class="product-info">
+                    <h3>Cooking Utensils Set</h3>
+                    <p class="price">KSh 1,650</p>
+                    <p class="rating">★★★★★ <span>(17)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=450&q=85" alt="Ceramic serving bowls">
+                <div class="product-info">
+                    <h3>Ceramic Serving Bowls</h3>
+                    <p class="price">KSh 1,300</p>
+                    <p class="rating">★★★★★ <span>(14)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=450&q=85" alt="Kitchen cleaning accessories">
+                <div class="product-info">
+                    <h3>Kitchen Cleaning Set</h3>
+                    <p class="price">KSh 750</p>
+                    <p class="rating">★★★★★ <span>(11)</span></p>
+                    <button class="add-cart" type="button">🛒 Add to Cart</button>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+</body>
+</html>

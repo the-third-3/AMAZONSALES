@@ -627,13 +627,6 @@ footer .brand span {
 }
     /*Home */
 
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 html {
   font-family: var(--font-family);
   line-height: 1.6;
@@ -760,17 +753,27 @@ body {
   transform: translateX(4px);
 }
 
-#sidebar li.active a svg, 
+#sidebar li.active a svg,
+#sidebar li.active .dropdown-btn svg:first-of-type,
 #sidebar a:hover svg, 
 #sidebar button:hover svg {
   fill: var(--primary-color);
   filter: drop-shadow(0 0 3px rgba(252,163,17,0.5));
 }
 
-#sidebar li.active a {
+#sidebar li.active a,
+#sidebar li.active .dropdown-btn {
   background: rgba(252, 163, 17, 0.1);
   border-left: 4px solid var(--primary-color);
   border-radius: 4px 12px 12px 4px;
+  color: var(--text-color);
+}
+
+.sub-menu li.active a {
+  color: var(--primary-color);
+  font-weight: 600;
+  background: rgba(252, 163, 17, 0.08);
+  border-radius: 8px;
 }
 
 /* Sub-menus */
